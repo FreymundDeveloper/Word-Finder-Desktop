@@ -16,6 +16,7 @@
 
 <script>
 import PillComponent from './PillComponent.vue'
+import { ipcRenderer } from 'electron'
 
 export default {
     components: {
@@ -33,6 +34,10 @@ export default {
     },
     methods: {
         processSubtitles() {
+            ipcRenderer.send("test", "hi")
+            ipcRenderer.on("test", (event, data) => {
+                console.log(data)
+            })
             console.log(this.files)
         }
     }
