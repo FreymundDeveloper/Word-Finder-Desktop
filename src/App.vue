@@ -1,19 +1,21 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld/>
+      <v-app-bar app color="deep-purple-darken-2">
+          <v-toolbar-title>Word Finder Desktop</v-toolbar-title>
+      </v-app-bar>
+      <HomePage />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomePage from './components/HomePage'
 
 export default {
   name: 'App',
-
   components: {
-    HelloWorld,
+    HomePage
   },
 
   data: () => ({
