@@ -1,5 +1,6 @@
 {
   "name": "word-finder-desktop",
+  "title": "Word Finder Desktop",
   "version": "0.1.0",
   "private": true,
   "scripts": {
