@@ -10,8 +10,8 @@ module.exports = paths => {
                               }).split("\n");
             resolve(rows);
 
-        } catch {
-            reject(rows);
+        } catch(errorFound) {
+            reject(errorFound);
         }
     })
 }
