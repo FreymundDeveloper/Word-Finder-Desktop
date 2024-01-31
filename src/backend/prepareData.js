@@ -4,9 +4,11 @@ module.exports = (rows) => {
             const data = rows.filter(filterValid)
                              .map(removePonctuation)
                              .map(removeTags)
+                             .map(removeBrackets)
                              .reduce(mergeRows)
                              .split(" ")
-                             .map(word => word.toLowerCase());
+                             .map(word => word.toLowerCase())
+                             .map(word => word.replace("|", ""));
 
             resolve(data);
 
@@ -30,6 +32,14 @@ function removePonctuation(row) {
 
 function removeTags(row) {
     return row.replace(/(<[^>]+)>/g, "").trim();
+}
+
+function removeTags(row) {
+    return row.replace(/(<[^>]+)>/g, "").trim();
+}
+
+function removeBrackets(row) {
+    return row.replace(/({[^}]+)}/g, "").trim();
 }
 
 function mergeRows(fullText, rowText) {
