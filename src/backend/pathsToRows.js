@@ -13,5 +13,5 @@ module.exports = paths => {
         } catch(errorFound) {
             reject(errorFound);
         }
-    })
+    });
 }

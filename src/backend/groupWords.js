@@ -17,5 +17,5 @@ module.exports = words => {
         } catch (errorFound) {
             reject(errorFound);
         }
-    })
+    });
 }
